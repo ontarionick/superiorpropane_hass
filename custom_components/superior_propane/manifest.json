@@ -1,0 +1,11 @@
+{
+  "codeowners": ["@ontarionick"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/ontarionick/superiorpropane_hass",
+  "domain": "superior_propane",
+  "iot_class": "cloud_polling",
+  "name": "Superior Propane",
+  "requirements": ["beautifulsoup4==4.11.1", "mechanize==0.4.8"],
+  "version": "0.1"
+}
