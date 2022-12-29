@@ -122,6 +122,7 @@ class SuperiorPropaneTankSensor(Entity):
             br.open(
                 f"https://mysuperior.superiorpropane.com/tanks/details/{self.tank_id}"
             )
+            time.sleep(10)
 
             soup = BeautifulSoup(br.response().read(), features="html5lib")
             tank_percentage = float(soup.find("span", id="sliderOutput0").text)
@@ -152,6 +153,7 @@ class SuperiorPropaneTankSensor(Entity):
             self._state = tank_size * (tank_percentage / 100)
             self._attributes = tank_attributes
             self._available = True
+            _LOGGER.info(f"Successfully updated Superior Propane Tank {self.tank_id}")
 
         except Exception as e:
             self._available = False
